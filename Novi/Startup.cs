@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Novi.Models;
 
 namespace Novi
 {
@@ -17,8 +18,13 @@ namespace Novi
         public void ConfigureServices(IServiceCollection services)
         {
             // register services here through dependency injection
+
+            //    services.AddTransient(); // Every time we ask the container for an instance, we will get back a new clean instance
+            //    services.AddSingleton(); // Every time we ask the container for an instance, we will get back the same instance
+            //    services.AddScoped();    // uses the instance for the specific http-webrequest
+            services.AddScoped<IArticleRepository, MockArticleRepository>();
+            services.AddScoped<ICategoryRepository, MockCategoryRepository>();
             services.AddControllersWithViews();
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
