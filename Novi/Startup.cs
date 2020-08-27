@@ -36,6 +36,12 @@ namespace Novi
             //    services.AddScoped();    // uses the instance for the specific http-webrequest
             services.AddScoped<IArticleRepository, ArticleRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+
+            services.AddHttpContextAccessor();
+            services.AddSession();
+
             services.AddControllersWithViews();
         }
 
@@ -48,8 +54,8 @@ namespace Novi
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles(); // looks in wwwroot for static files
- //           app.UseDefaultFiles();
-
+                                  //           app.UseDefaultFiles();
+            app.UseSession();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -57,8 +63,8 @@ namespace Novi
                 // Map incomming requests with an action controller
                 endpoints.MapControllerRoute(
                     name: "default",
-                    //                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                    pattern: "{controller=Article}/{action=List}/{id:int?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    //pattern: "{controller=Article}/{action=List}/{id:int?}");
             });
         }
     }

@@ -15,6 +15,10 @@ namespace Novi.Models
         public string ImageThumbnailUrl { get; set; }
         public bool IsArticleOfTheMonth { get; set; }
         public bool Hireable { get; set; }
+
+        public string HireFrom { get; set; }
+        public string HireTill { get; set; }
+
         public int CategoryId { get; set; }
         public Category Category { get; set; }
     }

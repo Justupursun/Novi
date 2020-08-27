@@ -10,40 +10,66 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Novi.Controllers
 {
-    public class ArticleController : Controller // Controllors respond with an action (returns a View) on incoming requests
+    public class ArticleController : Controller
     {
-        // get access to the repositories (data controlled via the repositories)
-        private readonly IArticleRepository _articleRepository; 
+        private readonly IArticleRepository _articleRepository;
         private readonly ICategoryRepository _categoryRepository;
 
-        // Constructor
+        // Constructor to build-in the 2 repositories-data into the system via starticleup (services.AddScoped<IArticleRepository, MockArticleRepository>();)
         public ArticleController(IArticleRepository articleRepository, ICategoryRepository categoryRepository)
         {
-            // get access to the model classes
             _articleRepository = articleRepository;
             _categoryRepository = categoryRepository;
         }
 
         // GET: /<controller>/
-        public IActionResult List()
+        //public IActionResult List()
+        //{
+        //    //ViewBag.CurrentCategory = "Cheese cakes";
+
+        //    //return View(_articleRepository.AllArticles);
+        //    ArticlesListViewModel articlesListViewModel = new ArticlesListViewModel();
+        //    articlesListViewModel.Articles = _articleRepository.AllArticles;
+
+        //    articlesListViewModel.CurrentCategory = "Cheese cakes";
+        //    return View(articlesListViewModel);
+        //}
+        // Controllers handle incomming requests with an action
+
+        public ViewResult List(string category)
         {
-            //ViewBag.CurrentCategory = "Modern Art";
+            IEnumerable<Article> articles;
+            string currentCategory;
 
-            //return View(_articleRepository.AllArticles);
-            ArticlesListViewModel articlesListViewModel = new ArticlesListViewModel();
-            articlesListViewModel.Articles = _articleRepository.AllArticles;
+            if (string.IsNullOrEmpty(category))
+            {
+                articles = _articleRepository.AllArticles.OrderBy(p => p.ArticleId);
+                currentCategory = "All articles";
+            }
+            else
+            {
+                articles = _articleRepository.AllArticles.Where(p => p.Category.CategoryName == category)
+                    .OrderBy(p => p.ArticleId);
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+            }
 
-            articlesListViewModel.CurrentCategory = "Modern Art";
-            return View(articlesListViewModel);
+            return View(new ArticlesListViewModel
+            {
+                Articles = articles,
+                CurrentCategory = currentCategory
+            });
         }
 
+
         public IActionResult Details(int id)
+        // ViewBag: The most basic way to show data on the dynamic cshtml-file
+        //ViewBag.CurrentCategory = "surrealistic";
         {
             var article = _articleRepository.GetArticleById(id);
             if (article == null)
-                return NotFound(); // return 404 notfound
+                return NotFound(); // send back a 404 not found
 
-            return View(article);
+            return View(article); // View: build-in methode from asp.net core to view a .cshtml-file
         }
     }
 }

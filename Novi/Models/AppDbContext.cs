@@ -15,8 +15,9 @@ namespace Novi.Models
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Article> Articles { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 

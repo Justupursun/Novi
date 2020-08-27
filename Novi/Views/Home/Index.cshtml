@@ -1,0 +1,16 @@
+﻿@model HomeViewModel
+
+
+<partial name="_Carousel" /> <!--taghelper-->
+
+<h2>Arts of the Month</h2>
+<h4>Our Monthly selection - just for you!</h4>
+
+<div class="row">
+
+    @foreach (var article in Model.ArticlesOfTheMonth)
+    {
+        <partial name="_ArticleCart" model="article" />
+    }
+
+</div>
