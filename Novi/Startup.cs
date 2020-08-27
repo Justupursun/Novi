@@ -57,7 +57,8 @@ namespace Novi
                 // Map incomming requests with an action controller
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    //                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Article}/{action=List}/{id:int?}");
             });
         }
     }

@@ -60,10 +60,10 @@ namespace Novi.Migrations
                         {
                             ArticleId = 1,
                             CategoryId = 1,
-                            Description = "Our famous apple arts!",
+                            Description = "Our famous apple pies!",
                             Hireable = true,
-                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/appleartsmall.jpg",
-                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/appleart.jpg",
+                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg",
+                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepie.jpg",
                             IsArticleOfTheMonth = true,
                             Name = "Apple Article",
                             Price = 12.95m
@@ -98,8 +98,8 @@ namespace Novi.Migrations
                             CategoryId = 1,
                             Description = "A summer classic!",
                             Hireable = true,
-                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherryartsmall.jpg",
-                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherryart.jpg",
+                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherrypiesmall.jpg",
+                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherrypie.jpg",
                             IsArticleOfTheMonth = false,
                             Name = "Cherry Article",
                             Price = 15.95m
@@ -108,10 +108,10 @@ namespace Novi.Migrations
                         {
                             ArticleId = 5,
                             CategoryId = 3,
-                            Description = "Happy holidays with this art!",
+                            Description = "Happy holidays with this pie!",
                             Hireable = true,
-                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/christmasappleartsmall.jpg",
-                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/christmasappleart.jpg",
+                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/christmasapplepiesmall.jpg",
+                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/christmasapplepie.jpg",
                             IsArticleOfTheMonth = false,
                             Name = "Christmas Apple Article",
                             Price = 13.95m
@@ -122,8 +122,8 @@ namespace Novi.Migrations
                             CategoryId = 3,
                             Description = "A Christmas favorite",
                             Hireable = true,
-                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cranberryartsmall.jpg",
-                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cranberryart.jpg",
+                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cranberrypiesmall.jpg",
+                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cranberrypie.jpg",
                             IsArticleOfTheMonth = false,
                             Name = "Cranberry Article",
                             Price = 17.95m
@@ -134,8 +134,8 @@ namespace Novi.Migrations
                             CategoryId = 1,
                             Description = "Sweet as peach",
                             Hireable = false,
-                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/peachartsmall.jpg",
-                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/peachart.jpg",
+                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/peachpiesmall.jpg",
+                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/peachpie.jpg",
                             IsArticleOfTheMonth = false,
                             Name = "Peach Article",
                             Price = 15.95m
@@ -146,8 +146,8 @@ namespace Novi.Migrations
                             CategoryId = 3,
                             Description = "Our Halloween favorite",
                             Hireable = true,
-                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinartsmall.jpg",
-                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinart.jpg",
+                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpiesmall.jpg",
+                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpie.jpg",
                             IsArticleOfTheMonth = true,
                             Name = "Pumpkin Article",
                             Price = 12.95m
@@ -158,8 +158,8 @@ namespace Novi.Migrations
                             CategoryId = 1,
                             Description = "My God, so sweet!",
                             Hireable = true,
-                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbartsmall.jpg",
-                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbart.jpg",
+                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpiesmall.jpg",
+                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpie.jpg",
                             IsArticleOfTheMonth = true,
                             Name = "Rhubarb Article",
                             Price = 15.95m
@@ -168,10 +168,10 @@ namespace Novi.Migrations
                         {
                             ArticleId = 10,
                             CategoryId = 1,
-                            Description = "Our delicious strawberry art!",
+                            Description = "Our delicious strawberry pie!",
                             Hireable = true,
-                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberryartsmall.jpg",
-                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberryart.jpg",
+                            ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypiesmall.jpg",
+                            ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypie.jpg",
                             IsArticleOfTheMonth = false,
                             Name = "Strawberry Article",
                             Price = 15.95m
@@ -211,17 +211,17 @@ namespace Novi.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CategoryName = "Abstract art"
+                            CategoryName = "Abstract pie"
                         },
                         new
                         {
                             CategoryId = 2,
-                            CategoryName = "Surrealistic art"
+                            CategoryName = "Surrealistic pie"
                         },
                         new
                         {
                             CategoryId = 3,
-                            CategoryName = "Other art"
+                            CategoryName = "Other pie"
                         });
                 });
 

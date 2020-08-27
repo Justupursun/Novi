@@ -36,5 +36,14 @@ namespace Novi.Controllers
             articlesListViewModel.CurrentCategory = "Modern Art";
             return View(articlesListViewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var article = _articleRepository.GetArticleById(id);
+            if (article == null)
+                return NotFound(); // return 404 notfound
+
+            return View(article);
+        }
     }
 }
