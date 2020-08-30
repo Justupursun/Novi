@@ -35,6 +35,7 @@ namespace Novi.Controllers
             return View(shoppingCartViewModel);
         }
 
+        //[HttpPost]
         public RedirectToActionResult AddToShoppingCart(int articleId)
         {
             var selectedArticle = _articleRepository.AllArticles.FirstOrDefault(p => p.ArticleId == articleId);

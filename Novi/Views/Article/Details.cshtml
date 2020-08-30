@@ -1,31 +1,50 @@
 ﻿
 @model Article
 
-<h2>@Model.Name</h2>
+    <form asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-articleId="@Model.ArticleId" method="post" role="form">
+        <h2>@Model.Name</h2>
 
-<div class="thumbnail">
-    <img alt="@Model.Name" src="@Model.ImageUrl">
-    <div class="caption-full">
-        <h3 class="pull-right">@Model.Price</h3>
-        <h3>
-            <a href="#">@Model.Name</a>
-        </h3>
-        <h4>@Model.Description</h4>
-        <p>@Model.Description</p>
+        <div class="thumbnail">
+            <img alt="@Model.Name" src="@Model.ImageUrl">
+            <div class="caption-full">
+                <h3 class="pull-right">@Model.Price</h3>
+                <h3>
+                    <a href="#">@Model.Name</a>
+                </h3>
+                <h4>@Model.Description</h4>
+                <p>@Model.Description</p>
 
-            <h5>Hire from: @Model.HireFrom</h5>
-            <h5>Hire till: @Model.HireTill</h5>
+                <div class="form-group">
+                    <label asp-for="HireFrom" class="col-md-2 control-label"></label>
+                    <div class="col-md-5">
+                        <input asp-for="HireFrom" class="form-control" />
+                        <span asp-validation-for="HireFrom" class="text-danger"></span>
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label asp-for="HireTill" class="col-md-2 control-label"></label>
+                        <div class="col-md-5">
+                            <input asp-for="HireTill" class="form-control" />
+                            <span asp-validation-for="HireTill" class="text-danger"></span>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-5">
+                                <input type="submit" class="btn btn-primary" value="Add to cart" />
+                            </div>
+                        </div>
 
 
 
 
 
-        <div class="addToCart">
-            <p class="button">
-                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
-                   asp-route-articleId="@Model.ArticleId">Add to cart</a>
-            </p>
-        </div>
+                        @*<div class="addToCart">
+                            <p class="button">
+                                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                                   asp-route-articleId="@Model.ArticleId">Add to cart</a>
+                            </p>
+                        </div>*@
 
-    </div>
-</div>
+                    </div>
+                </div>
+</form>

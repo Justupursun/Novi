@@ -16,8 +16,10 @@ namespace Novi.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
@@ -39,7 +41,9 @@ namespace Novi.Models
                 Hireable = true,
                 IsArticleOfTheMonth = true,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg",
-            }); 
+                HireFrom = "Olla",
+                HireTill = "Arrivaderci"
+            }) ; 
 
             modelBuilder.Entity<Article>().HasData(new Article
             {
@@ -53,6 +57,8 @@ namespace Novi.Models
                 IsArticleOfTheMonth = false,
                 ImageThumbnailUrl =
                     "https://gillcleerenpluralsight.blob.core.windows.net/files/blueberrycheesecakesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
             modelBuilder.Entity<Article>().HasData(new Article
@@ -66,6 +72,8 @@ namespace Novi.Models
                 Hireable = true,
                 IsArticleOfTheMonth = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cheesecakesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
             modelBuilder.Entity<Article>().HasData(new Article
@@ -79,6 +87,8 @@ namespace Novi.Models
                 Hireable = true,
                 IsArticleOfTheMonth = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherrypiesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
             modelBuilder.Entity<Article>().HasData(new Article
@@ -93,6 +103,8 @@ namespace Novi.Models
                 IsArticleOfTheMonth = false,
                 ImageThumbnailUrl =
                     "https://gillcleerenpluralsight.blob.core.windows.net/files/christmasapplepiesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
             modelBuilder.Entity<Article>().HasData(new Article
@@ -106,6 +118,8 @@ namespace Novi.Models
                 Hireable = true,
                 IsArticleOfTheMonth = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cranberrypiesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
             modelBuilder.Entity<Article>().HasData(new Article
@@ -119,6 +133,8 @@ namespace Novi.Models
                 Hireable = false,
                 IsArticleOfTheMonth = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/peachpiesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
             modelBuilder.Entity<Article>().HasData(new Article
@@ -132,6 +148,8 @@ namespace Novi.Models
                 Hireable = true,
                 IsArticleOfTheMonth = true,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpiesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
 
@@ -146,6 +164,8 @@ namespace Novi.Models
                 Hireable = true,
                 IsArticleOfTheMonth = true,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpiesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
             modelBuilder.Entity<Article>().HasData(new Article
@@ -159,6 +179,8 @@ namespace Novi.Models
                 Hireable = true,
                 IsArticleOfTheMonth = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypiesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
 
             modelBuilder.Entity<Article>().HasData(new Article
@@ -173,6 +195,8 @@ namespace Novi.Models
                 IsArticleOfTheMonth = false,
                 ImageThumbnailUrl =
                     "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrycheesecakesmall.jpg",
+                HireFrom = "Hallo",
+                HireTill = "Dag"
             });
         }
     }

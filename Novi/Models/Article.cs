@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,7 +17,12 @@ namespace Novi.Models
         public bool IsArticleOfTheMonth { get; set; }
         public bool Hireable { get; set; }
 
+        //[Required(ErrorMessage = "Please enter your startdate")]
+        //[Display(Name = "Hire From")]
+        //[StringLength(50)]
         public string HireFrom { get; set; }
+
+
         public string HireTill { get; set; }
 
         public int CategoryId { get; set; }

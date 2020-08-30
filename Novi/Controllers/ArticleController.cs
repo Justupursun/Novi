@@ -69,6 +69,27 @@ namespace Novi.Controllers
             if (article == null)
                 return NotFound(); // send back a 404 not found
 
+        //    [HttpPost]
+        //    public IActionResult update(Article article)
+        //    {
+        //        var items = _article.GetShoppingCartItems();
+        //        _shoppingCart.ShoppingCartItems = items;
+
+        //        if (_shoppingCart.ShoppingCartItems.Count == 0)
+        //        {
+        //            ModelState.AddModelError("", "Your cart is empty, add some arts first");
+        //        }
+
+        //        if (ModelState.IsValid)
+        //        {
+        //            _orderRepository.CreateOrder(order);
+        //            _shoppingCart.ClearCart();
+        //            return RedirectToAction("CheckoutComplete");
+        //        }
+        //        return View(order);
+        //    }
+
+
             return View(article); // View: build-in methode from asp.net core to view a .cshtml-file
         }
     }
