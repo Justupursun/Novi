@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,8 @@ namespace Novi
             services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+
 
             //    services.AddTransient(); // Every time we ask the container for an instance, we will get back a new clean instance
             //    services.AddSingleton(); // Every time we ask the container for an instance, we will get back the same instance
@@ -43,6 +46,7 @@ namespace Novi
             services.AddSession();
 
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +61,8 @@ namespace Novi
                                   //           app.UseDefaultFiles();
             app.UseSession();
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -64,7 +70,8 @@ namespace Novi
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                    //pattern: "{controller=Article}/{action=List}/{id:int?}");
+                //pattern: "{controller=Article}/{action=List}/{id:int?}");
+                endpoints.MapRazorPages();
             });
         }
     }
